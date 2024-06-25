@@ -1,38 +1,8 @@
-// variables
-$background-main-color: white;
-$background-burger-color: #dedede;
-$text-main-color: #575C74;
-$text-title-color: #0C122D;
-$button-light-color: #FFB800;
-$button-dark-color: #1B5FC1;
+@import "variables";
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.header__banner {
+    background-image: url(/img/header/header-banner-background.png); //transparent?
 }
-
-:root {
-    font-family: 'Source+Sans+Pro', sans-serif;
-    scroll-behavior: smooth;
-    background-color: $background-main-color;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
-body.lock {
-    overflow: hidden;
-}
-
-
-//header
-// .header__banner {
-//     background-image: url(/img/header/header-banner-background.png);
-// }
 
 .header__banner-container {
     padding: 30px;
@@ -55,76 +25,60 @@ body.lock {
     width: 162px;
 }
 
-// .navigation-wrapper {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-// }
+.navigation-wrapper {
+     display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-// .navigation-links {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// }
-
-
-
-
-
-
-
-
-/*
-* Variables for breakpoints
-*/
-$mobile-landscape: 568px;
-$tablet: 768px;
-$desktop: 992px;
-
-/*
-* Map for breakpoints
-*/
-$breakpoints: (
-  "small": (
-    min-width: $mobile-landscape,
-  ),
-  "medium": (
-    min-width: $tablet,
-  ),
-  "large": (
-    min-width: $desktop,
-  ),
-); 
+.navigation-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 @mixin responsive($size) {
     $query: map-get($breakpoints, $size);
-  
-      @media #{$query} {
+
+    @media screen and (min-width: $query) {
         @content;
     }
 }
 
-
-.header__banner {
-    background-color: yellow; // Regular styles (For below 320px)
-  
-    @include responsive('small') {
-      background-color: red; // Styles for 'small' breakpoint or above (568px)
-    }
-  
-    // @include responsive('medium') {
-    //   background-color: green; // Styles for 'medium' breakpoint or above (768px)
-    // }
-  
-    // @include responsive('large') {
-    //   background-color: blue; // Styles for 'large' breakpoint or above (1024px)
-    // }
+@mixin with-content($content) {
+    @content;
 }
 
-
-
-
+// .header__banner {
+//     background-color: yellow; // ≥320px
+  
+//     @include responsive('small') {
+//       background-color: red; // Styles for 'small' breakpoint or above (568px)
+//     }
+  
+//     @include responsive('medium') {
+//       background-color: green; // Styles for 'medium' breakpoint or above (768px)
+//     }
+  
+//     @include responsive('large') {
+//       background-color: blue; // Styles for 'large' breakpoint or above (1024px)
+//     }
+// }
+.navigation-wrapper {
+    @include responsive('large') {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $background-burger-color;
+        transition: top 0.5s ease-in;
+        padding: 15px 24px 50px 24px;
+        overflow: hidden;
+        margin: auto;
+    }
+}
 
 // @media (max-width: 991px) {
 //    .navigation-wrapper {

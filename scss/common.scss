@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Source+Sans+Pro', sans-serif;
+    scroll-behavior: smooth;
+    background-color: $background-main-color;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body.lock {
+    overflow: hidden;
+}

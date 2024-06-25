@@ -1,0 +1,20 @@
+// colours
+$background-main-color: white;
+$background-burger-color: #dedede;
+$text-main-color: #575C74;
+$text-title-color: #0C122D;
+$button-light-color: #FFB800;
+$button-dark-color: #1B5FC1;
+
+
+//variables for breakpoints
+$mobile-landscape: 568px;
+$tablet: 768px;
+$desktop: 992px;
+
+//map for breakpoints
+$breakpoints: (
+  "small": $mobile-landscape,
+  "medium": $tablet,
+  "large": $desktop
+); 
