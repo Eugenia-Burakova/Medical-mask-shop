@@ -1,5 +1,6 @@
 // variables
 $background-main-color: white;
+$background-burger-color: #dedede;
 $text-main-color: #575C74;
 $text-title-color: #0C122D;
 $button-light-color: #FFB800;
@@ -29,12 +30,243 @@ body.lock {
 
 
 //header
-.navigation-wrapper {
-    width: 600px;
-    background-color: $button-dark-color;
+// .header__banner {
+//     background-image: url(/img/header/header-banner-background.png);
+// }
+
+.header__banner-container {
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-.navigation-link {
-    font-size: 40px;
-    font-weight: bold;
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.navigation-logo {
+    position: relative;
+    z-index: 1;
+}
+
+.navigation-logo img {
+    width: 162px;
+}
+
+// .navigation-wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .navigation-links {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+
+
+
+
+
+
+
+/*
+* Variables for breakpoints
+*/
+$mobile-landscape: 568px;
+$tablet: 768px;
+$desktop: 992px;
+
+/*
+* Map for breakpoints
+*/
+$breakpoints: (
+  "small": (
+    min-width: $mobile-landscape,
+  ),
+  "medium": (
+    min-width: $tablet,
+  ),
+  "large": (
+    min-width: $desktop,
+  ),
+); 
+
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+  
+      @media #{$query} {
+        @content;
+    }
+}
+
+
+.header__banner {
+    background-color: yellow; // Regular styles (For below 320px)
+  
+    @include responsive('small') {
+      background-color: red; // Styles for 'small' breakpoint or above (568px)
+    }
+  
+    // @include responsive('medium') {
+    //   background-color: green; // Styles for 'medium' breakpoint or above (768px)
+    // }
+  
+    // @include responsive('large') {
+    //   background-color: blue; // Styles for 'large' breakpoint or above (1024px)
+    // }
+}
+
+
+
+
+
+// @media (max-width: 991px) {
+//    .navigation-wrapper {
+//     position: fixed;
+//     top: -100%;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: $background-burger-color;
+//     transition: top 0.5s ease-in;
+//     padding: 15px 24px 50px 24px;
+//     overflow: hidden;
+//     margin: auto;
+//    }
+//    .navigation-wrapper.active {
+//     top: 0;
+//    }
+//    .navigation-links {
+//     display: grid;
+//     grid-template-rows: 50px 50px 50px 50px 50px 50px;
+//     justify-items: center;
+//    }
+//    .navigation-link {
+//     text-decoration: none;
+//     color: $text-main-color;
+//     font-size: 17px;
+//     line-height: 3ch;
+//     transition: 0.2s;
+//    }
+
+//    .navigation-link:hover {
+//     color: $text-title-color;
+//     font-size: 18px;
+//     font-weight: 500;
+//    }
+// }
+
+// .navigation-burger {
+//     position: relative;
+//     width: 30px;
+//     height: 20px;
+//     padding: 12px;
+//     cursor: pointer;
+//     z-index: 1;
+// }
+
+// @media (max-width: 991px) {
+//     .navigation-burger span,
+//     .navigation-burger::before,
+//     .navigation-burger::after {
+//         position: absolute;
+//         left: 0;
+//         height: 2px;
+//         width: 100%;
+//         background-color: var(--text-main-color);
+//         transition: all 0.5s ease-in-out;
+//         z-index: 2;
+//     }
+//     .navigation-burger::before,
+//     .navigation-burger::after {
+//         content: " ";
+//     }
+//     .navigation-burger::before {
+//         top: 0;
+//     }
+//     .navigation-burger::after {
+//         bottom: 0;
+//     }
+//     .navigation-burger.active::before {                      /*pseudoclasses we put in the end!!!*/
+//         top: 50%;
+//         transform: rotate(-45deg);
+//     }
+//     .navigation-burger.active span {                         /*поставили клас active після .navigation-burger, бо будемо заст. його з js до саме .navigation-burger, а не span*/
+//         transform: scale(0);
+//     }
+//     .navigation-burger.active::after {                       /*pseudoclasses we put in the end!!!*/
+//         bottom: 40%;
+//         transform: rotate(45deg);
+//     }
+// }   
+
+// @media (min-width:992px) {
+//     .header__contacts {
+//         background-color: var(--text-main-color);
+//     }
+//     .header__contacts-container {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//         padding: 30px;
+//     }
+//     .contacts-item-phone__text, .contacts-item-email__text {
+//         color: var(--text-title-color);
+//         font-size: 15px;
+//     }
+//     .contacts-item-phone__number, .contacts-item-email__link {
+//         color: var(--text-title-color);
+//         font-size: 15px;
+//         text-decoration: none;
+//         transition: 0.2s;
+//     }
+//     .contacts-item-phone__number:hover, .contacts-item-email__link:hover {
+//         text-decoration: none;
+//         color: var(--text-title-color);
+//         font-size: 16px;
+//         font-weight: 500;
+//     }
+//     .navigation-wrapper, .navigation-links {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//     }
+//     .navigation {
+//         position: relative;
+//         display: flex;
+//         justify-content: space-between;
+//     }
+//     .navigation-burger {
+//         position: absolute;
+//     }
+//     .navigation-links {
+//         gap: 25px;
+//     }
+//     .navigation-wrapper {
+//         gap: 50px;
+//     }
+//     .navigation-socials {
+//         display: flex;
+//         flex-direction: row;
+//         gap: 20px;
+//     }
+//     .navigation-link {
+//         text-decoration: none;
+//         color: var(--dark-description-color);
+//         font-size: 17px;
+//         line-height: 3ch;
+//         transition: 0.2s;
+//     }
+    
+//        .navigation-link:hover {
+//         color: var(--text-title-color);
+//         font-size: 18px;
+//         font-weight: 500;
+//     }
+// }
