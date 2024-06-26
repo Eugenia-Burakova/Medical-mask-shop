@@ -1,1 +1,81 @@
 @import "variables";
+
+.product {
+    background-color: $background-main-color;
+}
+
+.product__container {
+    max-width: 1200px;
+    padding: 100px 40px 100px 40px;
+}
+
+.product__cards{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 40px;
+}
+
+.product__card {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.product__card-text-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.product__card-title {
+    color: $text-title-color;
+    font-size: 40px;
+}
+
+.product__card-text {
+    color: $text-main-color;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.product__card-text .highlight {
+    font-weight: bold;
+}
+
+// .vector-right {
+//     background-image: url("/img/product/vector-right.png");
+//     background-size: 600px;
+//     background-position: left;
+//     height: 1160px;
+// }
+
+// .vector-left {
+//     background-image: url("/img/product/vector-left.png");
+// }
+
+//mixins
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $query) { //min-width
+        @content;
+    }
+}
+
+@mixin with-content($content) {
+    @content;
+}
+
+.product__cards {
+    @include responsive('medium') {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 40px;
+    }
+}
+
+.product__container {
+    @include responsive('large') {
+        margin: auto;
+    }
+}
