@@ -42,15 +42,16 @@
     font-weight: bold;
 }
 
-// .vector-right {
-//     background-image: url("/img/product/vector-right.png");
-//     background-size: 600px;
-//     background-position: left;
-//     height: 1160px;
-// }
+.vector-right {
+    background-image: url("/img/product/vector-right.png");
+    background-origin: content-box;
+    background-repeat: no-repeat;
+}
 
 // .vector-left {
 //     background-image: url("/img/product/vector-left.png");
+//     background-origin: content-box;
+//     background-repeat: no-repeat;
 // }
 
 //mixins
