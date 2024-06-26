@@ -5,7 +5,7 @@
 }
 
 .home__banner {
-    background-image: url("/img/home/home-background.png");
+    background-image: url("../img/home/home-background.png"); //fixing the path
     background-size: cover;
     background-position: 40%;
     background-attachment: fixed; 
