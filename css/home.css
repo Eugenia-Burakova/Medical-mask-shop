@@ -91,7 +91,6 @@
   .home__info-container {
     display: grid;
     align-self: center;
-    padding-left: 30px;
   }
 }
 
@@ -125,11 +124,5 @@
   .home__img-container {
     display: flex;
     justify-content: flex-end;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .home__img {
-    margin: 0 40px 0 0;
   }
 }/*# sourceMappingURL=home.css.map */

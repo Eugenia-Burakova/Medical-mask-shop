@@ -106,7 +106,6 @@
     @include responsive('medium') {
         display: grid;
         align-self: center;
-        padding-left: 30px;
     }
 }
 
@@ -140,11 +139,5 @@
     @include responsive('large') {
         display: flex;
         justify-content: flex-end;
-    }
-}
-
-.home__img {
-    @include responsive('large') {
-        margin: 0 40px 0 0;
     }
 }

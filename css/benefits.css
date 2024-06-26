@@ -1,1 +1,65 @@
-/*# sourceMappingURL=benefits.css.map */
+.benefits {
+  background-color: rgb(246, 253, 250);
+}
+
+.benefits__container {
+  max-width: 1200px;
+  padding: 100px 40px 100px 40px;
+}
+
+.benefits__cards {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 30px;
+}
+
+.benefits__card {
+  display: grid;
+  grid-template-columns: 10% auto;
+  text-align: start;
+  background-color: rgb(246, 253, 250);
+  gap: 10px;
+}
+
+.benefits__card-icon-container {
+  width: 30px;
+}
+
+.benefits__card-text-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
+}
+
+.benefits__card-title {
+  color: #0C122D;
+  font-size: 20px;
+}
+
+.benefits__card-text {
+  color: #575C74;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__cards {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__container {
+    margin: auto;
+  }
+}/*# sourceMappingURL=benefits.css.map */

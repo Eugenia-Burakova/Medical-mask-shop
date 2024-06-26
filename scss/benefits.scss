@@ -1,2 +1,81 @@
 @import "variables";
 
+.benefits {
+    background-color: $background-benefits-color;
+}
+
+.benefits__container {
+    max-width: 1200px;
+    padding: 100px 40px 100px 40px;
+}
+
+.benefits__cards{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.benefits__card {
+    display: grid;
+    grid-template-columns: 10% auto;
+    text-align: start;
+    background-color: $background-benefits-color;
+    gap: 10px;
+}
+
+.benefits__card-icon-container {
+    width: 30px;
+}
+
+.benefits__card-text-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.benefits__card-title {
+    color: $text-title-color;
+    font-size: 20px;
+}
+
+.benefits__card-text {
+    color: $text-main-color;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+//mixins
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $query) { //min-width
+        @content;
+    }
+}
+
+@mixin with-content($content) {
+    @content;
+}
+
+.benefits__cards {
+    @include responsive('medium') {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 40px;
+    }
+}
+
+.benefits__cards {
+    @include responsive('large') {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 40px;
+    }
+}
+
+.benefits__container {
+    @include responsive('large') {
+        
+        margin: auto;
+    }
+}
