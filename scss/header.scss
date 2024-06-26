@@ -38,10 +38,19 @@
     align-items: center;
 }
 
-@mixin responsive($size) {
+//mixins
+@mixin burger($size) {
     $query: map-get($breakpoints, $size);
 
-    @media screen and (min-width: $query) {
+    @media screen and (max-width: $query) { //max-width
+        @content;
+    }
+}
+
+@mixin menu($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $query) { //min-width (!)
         @content;
     }
 }
@@ -50,23 +59,8 @@
     @content;
 }
 
-// .header__banner {
-//     background-color: yellow; // ≥320px
-  
-//     @include responsive('small') {
-//       background-color: red; // Styles for 'small' breakpoint or above (568px)
-//     }
-  
-//     @include responsive('medium') {
-//       background-color: green; // Styles for 'medium' breakpoint or above (768px)
-//     }
-  
-//     @include responsive('large') {
-//       background-color: blue; // Styles for 'large' breakpoint or above (1024px)
-//     }
-// }
 .navigation-wrapper {
-    @include responsive('large') {
+    @include burger('large') {
         position: fixed;
         top: -100%;
         left: 0;
@@ -80,147 +74,167 @@
     }
 }
 
-// @media (max-width: 991px) {
-//    .navigation-wrapper {
-//     position: fixed;
-//     top: -100%;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: $background-burger-color;
-//     transition: top 0.5s ease-in;
-//     padding: 15px 24px 50px 24px;
-//     overflow: hidden;
-//     margin: auto;
-//    }
-//    .navigation-wrapper.active {
-//     top: 0;
-//    }
-//    .navigation-links {
-//     display: grid;
-//     grid-template-rows: 50px 50px 50px 50px 50px 50px;
-//     justify-items: center;
-//    }
-//    .navigation-link {
-//     text-decoration: none;
-//     color: $text-main-color;
-//     font-size: 17px;
-//     line-height: 3ch;
-//     transition: 0.2s;
-//    }
+.navigation-wrapper.active {
+    @include burger('large') {
+        top: 0;
+    }
+}
+.navigation-links {
+    @include burger('large') {
+        display: grid;
+        grid-template-rows: 50px 50px 50px 50px 50px 50px;
+        justify-items: center;
+    }
+}
 
-//    .navigation-link:hover {
-//     color: $text-title-color;
-//     font-size: 18px;
-//     font-weight: 500;
-//    }
-// }
+.navigation-link {
+    @include burger('large') {
+        text-decoration: none;
+        color: $text-main-color;
+        font-size: 17px;
+        line-height: 3ch;
+        transition: 0.2s;
+    }
+}
 
-// .navigation-burger {
-//     position: relative;
-//     width: 30px;
-//     height: 20px;
-//     padding: 12px;
-//     cursor: pointer;
-//     z-index: 1;
-// }
+.navigation-link:hover {
+    @include burger('large') {
+        color: $text-title-color;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
 
-// @media (max-width: 991px) {
-//     .navigation-burger span,
-//     .navigation-burger::before,
-//     .navigation-burger::after {
-//         position: absolute;
-//         left: 0;
-//         height: 2px;
-//         width: 100%;
-//         background-color: var(--text-main-color);
-//         transition: all 0.5s ease-in-out;
-//         z-index: 2;
-//     }
-//     .navigation-burger::before,
-//     .navigation-burger::after {
-//         content: " ";
-//     }
-//     .navigation-burger::before {
-//         top: 0;
-//     }
-//     .navigation-burger::after {
-//         bottom: 0;
-//     }
-//     .navigation-burger.active::before {                      /*pseudoclasses we put in the end!!!*/
-//         top: 50%;
-//         transform: rotate(-45deg);
-//     }
-//     .navigation-burger.active span {                         /*поставили клас active після .navigation-burger, бо будемо заст. його з js до саме .navigation-burger, а не span*/
-//         transform: scale(0);
-//     }
-//     .navigation-burger.active::after {                       /*pseudoclasses we put in the end!!!*/
-//         bottom: 40%;
-//         transform: rotate(45deg);
-//     }
-// }   
+.navigation-burger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 1;
+}
 
-// @media (min-width:992px) {
-//     .header__contacts {
-//         background-color: var(--text-main-color);
-//     }
-//     .header__contacts-container {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         padding: 30px;
-//     }
-//     .contacts-item-phone__text, .contacts-item-email__text {
-//         color: var(--text-title-color);
-//         font-size: 15px;
-//     }
-//     .contacts-item-phone__number, .contacts-item-email__link {
-//         color: var(--text-title-color);
-//         font-size: 15px;
-//         text-decoration: none;
-//         transition: 0.2s;
-//     }
-//     .contacts-item-phone__number:hover, .contacts-item-email__link:hover {
-//         text-decoration: none;
-//         color: var(--text-title-color);
-//         font-size: 16px;
-//         font-weight: 500;
-//     }
-//     .navigation-wrapper, .navigation-links {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//     }
-//     .navigation {
-//         position: relative;
-//         display: flex;
-//         justify-content: space-between;
-//     }
-//     .navigation-burger {
-//         position: absolute;
-//     }
-//     .navigation-links {
-//         gap: 25px;
-//     }
-//     .navigation-wrapper {
-//         gap: 50px;
-//     }
-//     .navigation-socials {
-//         display: flex;
-//         flex-direction: row;
-//         gap: 20px;
-//     }
-//     .navigation-link {
-//         text-decoration: none;
-//         color: var(--dark-description-color);
-//         font-size: 17px;
-//         line-height: 3ch;
-//         transition: 0.2s;
-//     }
-    
-//        .navigation-link:hover {
-//         color: var(--text-title-color);
-//         font-size: 18px;
-//         font-weight: 500;
-//     }
-// }
+.navigation-burger span,
+.navigation-burger::before,
+.navigation-burger::after {
+    @include burger('large') {
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $text-title-color;
+        transition: all 0.5s ease-in-out;
+        z-index: 2;
+    }  
+}
+
+.navigation-burger::before,
+.navigation-burger::after {
+    @include burger('large') {
+        content: " ";
+    }
+}
+
+.navigation-burger::before {
+    @include burger('large') {
+        top: 0;
+    }
+}
+
+.navigation-burger::after {
+    @include burger('large') {
+        bottom: 0;
+    }
+}
+
+.navigation-burger.active::before {
+    @include burger('large') {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+}
+
+.navigation-burger.active span {
+    @include burger('large') {
+        transform: scale(0);
+    }
+}
+
+.navigation-burger.active::after {
+    @include burger('large') {
+        bottom: 40%;
+        transform: rotate(45deg);
+    }
+}
+
+
+.navigation-wrapper,
+.navigation-links {
+    @include menu('large') {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navigation {
+    @include menu('large') {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.navigation-burger {
+    @include menu('large') {
+        position: absolute;
+    }
+}
+
+.navigation-links {
+    @include menu('large') {
+        gap: 25px;
+    }
+}
+
+.navigation-wrapper {
+    @include menu('large') {
+        gap: 50px;
+    }
+}
+
+.navigation-link {
+    @include menu('large') {
+        text-decoration: none;
+        color: $text-title-color;
+        font-size: 17px;
+        line-height: 3ch;
+        transition: 0.2s;
+    }
+}
+
+.navigation-link:hover {
+    @include menu('large') {
+        color: $text-main-color;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.navigation-contact-button {
+    background-color: $button-dark-color;
+    color: white;
+    border-radius: 10px;
+    border-color: $button-dark-color;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: 1s;
+}
+
+.navigation-contact-button:hover {
+    background-color: $button-hover-color;
+    color: $button-dark-color
+}

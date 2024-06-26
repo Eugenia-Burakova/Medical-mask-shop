@@ -5,6 +5,7 @@ $text-main-color: #575C74;
 $text-title-color: #0C122D;
 $button-light-color: #FFB800;
 $button-dark-color: #1B5FC1;
+$button-hover-color: white;
 
 
 //variables for breakpoints
@@ -18,3 +19,29 @@ $breakpoints: (
   "medium": $tablet,
   "large": $desktop
 ); 
+
+
+
+// @mixin responsive($size) {
+//     $query: map-get($breakpoints, $size);
+
+//     @media screen and (min-width: $query) {
+//         @content;
+//     }
+// }
+
+// .header__banner {
+//     background-color: yellow; // ≥320px
+  
+//     @include responsive('small') {
+//       background-color: red; // Styles for 'small' breakpoint or above (568px)
+//     }
+  
+//     @include responsive('medium') {
+//       background-color: green; // Styles for 'medium' breakpoint or above (768px)
+//     }
+  
+//     @include responsive('large') {
+//       background-color: blue; // Styles for 'large' breakpoint or above (1024px)
+//     }
+// }
