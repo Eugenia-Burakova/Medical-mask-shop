@@ -1,1 +1,135 @@
-/*# sourceMappingURL=home.css.map */
+.home {
+  background-color: white;
+}
+
+.home__banner {
+  background-image: url("/img/home/home-background.png");
+  background-size: cover;
+  background-position: 40%;
+  background-attachment: fixed;
+}
+
+.home__content {
+  max-width: 1200px;
+  padding: 100px 40px 100px 40px;
+}
+
+.home__info-mask-model {
+  color: #FFB800;
+  font-size: 14px;
+}
+
+.home__info-title {
+  color: #0C122D;
+  font-size: 44px;
+  margin-top: 20px;
+}
+
+.home__info-text {
+  color: #575C74;
+  font-size: 16px;
+  line-height: 1.5rem;
+  margin-top: 20px;
+}
+
+.home__info-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.home__info-button {
+  font-size: 17px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: 1s;
+}
+
+.home__info-button-shop {
+  background-color: #1B5FC1;
+  color: white;
+  border-color: #1B5FC1;
+}
+
+.home__info-button-shop:hover {
+  background-color: white;
+  color: #1B5FC1;
+}
+
+.home__info-button-more {
+  background-color: white;
+  color: #FFB800;
+  border-color: #FFB800;
+}
+
+.home__info-button-more:hover {
+  background-color: #FFB800;
+  color: white;
+}
+
+.home__img {
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .home__content {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__info-container {
+    display: grid;
+    align-self: center;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__info-title {
+    font-size: 72px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__info-buttons {
+    display: flex;
+    justify-content: start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__img {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home__banner {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home__img-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home__img {
+    margin: 0 40px 0 0;
+  }
+}/*# sourceMappingURL=home.css.map */

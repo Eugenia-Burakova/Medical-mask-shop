@@ -1,5 +1,5 @@
 .header__banner {
-  background-color: transparent;
+  background-color: rgba(234, 234, 234, 0.9);
 }
 
 .header__banner-container {
@@ -43,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #dedede;
+    background: rgba(222, 222, 222, 0.95);
     transition: top 0.5s ease-in;
     padding: 15px 24px 50px 24px;
     overflow: hidden;
@@ -201,6 +201,7 @@
 .navigation-contact-button {
   background-color: #1B5FC1;
   color: white;
+  font-size: 17px;
   border-radius: 10px;
   border-color: #1B5FC1;
   border-width: 1px;

@@ -1,6 +1,7 @@
 // colours
 $background-main-color: white;
-$background-burger-color: #dedede;
+$background-burger-color: rgba(222, 222, 222, 0.95);
+$background-header-color: rgba(234, 234, 234, 0.9);
 $text-main-color: #575C74;
 $text-title-color: #0C122D;
 $button-light-color: #FFB800;
@@ -9,7 +10,7 @@ $button-hover-color: white;
 
 
 //variables for breakpoints
-$mobile-landscape: 568px;
+$mobile-landscape: 480px;
 $tablet: 768px;
 $desktop: 992px;
 

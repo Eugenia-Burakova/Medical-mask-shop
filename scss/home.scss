@@ -1,2 +1,150 @@
 @import "variables";
 
+.home {
+    background-color: $background-main-color;
+}
+
+.home__banner {
+    background-image: url("/img/home/home-background.png");
+    background-size: cover;
+    background-position: 40%;
+    background-attachment: fixed; 
+}
+
+.home__content {
+    max-width: 1200px;
+    padding: 100px 40px 100px 40px;
+}
+
+.home__info-mask-model {
+    color: $button-light-color;
+    font-size: 14px;
+}
+
+.home__info-title {
+    color: $text-title-color;
+    font-size: 44px;
+    margin-top: 20px;
+}
+
+.home__info-text {
+    color: $text-main-color;
+    font-size: 16px;
+    line-height: 1.5rem;
+    margin-top: 20px;
+}
+
+.home__info-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.home__info-button {
+    font-size: 17px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: 1s;
+}
+
+.home__info-button-shop {
+    background-color: $button-dark-color;
+    color: $button-hover-color;
+    border-color: $button-dark-color;
+}
+
+.home__info-button-shop:hover {
+    background-color: $button-hover-color;
+    color: $button-dark-color;
+}
+
+.home__info-button-more {
+    background-color: $button-hover-color;
+    color: $button-light-color;
+    border-color: $button-light-color;
+}
+
+.home__info-button-more:hover {
+    background-color: $button-light-color;
+    color: $button-hover-color;
+}
+
+.home__img {
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+//mixins
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $query) { //min-width
+        @content;
+    }
+}
+
+@mixin with-content($content) {
+    @content;
+}
+
+.home__content {
+    @include responsive('medium') {
+        display: grid;
+        grid-template-columns: 50% auto;
+        gap: 40px;
+    }
+}
+
+.home__info-container {
+    @include responsive('medium') {
+        display: grid;
+        align-self: center;
+        padding-left: 30px;
+    }
+}
+
+.home__info-title {
+    @include responsive('medium') {
+        font-size: 72px;
+    }
+}
+
+.home__info-buttons {
+    @include responsive('medium') {
+        display: flex;
+        justify-content: start;
+    }
+}
+
+.home__img {
+    @include responsive('medium') {
+        max-width: 400px;
+    }
+}
+
+.home__banner {
+    @include responsive('large'){
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.home__img-container {
+    @include responsive('large') {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.home__img {
+    @include responsive('large') {
+        margin: 0 40px 0 0;
+    }
+}

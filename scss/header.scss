@@ -1,7 +1,7 @@
 @import "variables";
 
 .header__banner {
-    background-color: transparent;//background-image: url(/img/header/header-banner-background.png); //transparent?
+    background-color: $background-header-color;
 }
 
 .header__banner-container {
@@ -26,8 +26,8 @@
 }
 
 .navigation-wrapper {
-     display: flex;
-     flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -66,7 +66,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $background-burger-color;
+        background: $background-burger-color;
         transition: top 0.5s ease-in;
         padding: 15px 24px 50px 24px;
         overflow: hidden;
@@ -224,6 +224,7 @@
 .navigation-contact-button {
     background-color: $button-dark-color;
     color: white;
+    font-size: 17px;
     border-radius: 10px;
     border-color: $button-dark-color;
     border-width: 1px;
