@@ -127,16 +127,37 @@
   color: #1B5FC1;
 }
 
-@media screen and (min-width: 992px) {
-  .benefits__cards {
+@media screen and (min-width: 768px) {
+  .factory__cards {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 40px;
+    grid-template-columns: 50% 1fr 1fr;
+    gap: 0;
   }
 }
 
-@media screen and (min-width: 992px) {
-  .benefits__container {
-    margin: auto;
+@media screen and (min-width: 768px) {
+  .factory-located {
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .textblock-one {
+    color: #575C74;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .textblock-two {
+    color: white;
+    background-color: #1B5FC1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .textblock-three {
+    color: white;
+    background-color: #1B5FC1;
   }
 }/*# sourceMappingURL=factory.css.map */

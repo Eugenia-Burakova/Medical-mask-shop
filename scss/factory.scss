@@ -142,38 +142,42 @@
     @content;
 }
 
-// .factory__cards {
-//     @include responsive('medium') {
-//         display: grid;
-//         grid-template-columns: 50% auto auto;
-//         gap: 40px;
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.benefits__cards {
-    @include responsive('large') {
+.factory__cards {
+    @include responsive('medium') {
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        gap: 40px;
+        grid-template-columns: 50% 1fr 1fr;
+        gap: 0;
     }
 }
 
-.benefits__container {
-    @include responsive('large') {
-        margin: auto;
+.factory-located {
+    @include responsive('medium') {
+        height: 500px;
     }
 }
+
+.textblock-one {
+    @include responsive('medium') {
+        color: $text-main-color; //чого не міняє колір літер?
+        background-color: $background-main-color;
+    }
+}
+
+.textblock-two {
+    @include responsive('medium') {
+        color: $background-main-color;
+        background-color: $button-dark-color;
+    }
+}
+
+.textblock-three {
+    @include responsive('medium') {
+        color: $background-main-color;
+        background-color: $button-dark-color;
+    }
+}
+
+
+
+
+
