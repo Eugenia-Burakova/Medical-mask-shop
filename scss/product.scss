@@ -43,16 +43,10 @@
 }
 
 .vector-right {
-    background-image: url("/img/product/vector-right.png");
+    background-image: url("../img/product/vector-right.png"); //path!
     background-origin: content-box;
     background-repeat: no-repeat;
 }
-
-// .vector-left {
-//     background-image: url("/img/product/vector-left.png");
-//     background-origin: content-box;
-//     background-repeat: no-repeat;
-// }
 
 //mixins
 @mixin responsive($size) {
