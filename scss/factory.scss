@@ -1,0 +1,179 @@
+@import "variables";
+
+.factory {
+    background: linear-gradient($background-main-color, $background-benefits-color);
+    border-radius: 50px;
+}
+
+.factory__container {
+    max-width: 1200px;
+    padding: 100px 40px 100px 40px;
+}
+
+.factory__cards{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.factory-img {
+    height: 330px;
+    background-image: url(../img/factory/factory.png);
+    background-size: cover;
+    background-position: 40%;
+}
+
+.factory-info {
+    height: 330px;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    padding: 20px;
+}
+
+.factory__card-text {
+    font-size: 15px;
+    line-height: 1.5rem;
+}
+
+.textblock-one {
+    color: $background-main-color;
+    background-color: $button-dark-color;
+}
+
+.textblock-two {
+    color: $text-title-color;
+    background-color: $button-light-color;
+}
+
+.textblock-three {
+    color: $background-main-color;
+    background-color: $button-dark-color;
+}
+
+.factory-located {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: $button-light-color;
+    height: 400px;
+}
+
+.factory__card-title {
+    color: $text-title-color;
+    font-size: 20px;
+}
+
+.factory__card-text {
+    font-size: 15px;
+    line-height: 1.5rem;
+    color: $text-title-color;
+}
+
+.factory__card-contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 20px;
+}
+
+.factory__card-contact-button {
+    text-align: center;
+    font-size: 17px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px;
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+    transition: 1s;
+    color: $button-dark-color;
+    width: 120px;
+}
+
+.factory__card-contact-button:hover {
+    background-color: $button-dark-color;
+    color: $button-hover-color;
+    border: none;
+}
+
+.factory__card-contact-tel {
+    display: grid;
+    grid-template-columns: 10% auto;
+    justify-content: center;
+    gap: 40px;
+}
+
+.factory__card-contact-tel-icon {
+    width: 40px;
+}
+
+.factory__card-contact-tel-title {
+    font-size: 15px;
+    color: $text-title-color;
+}
+
+.factory__card-contact-tel-number {
+    font-size: 15px;
+    color: $text-title-color;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.factory__card-contact-tel-number:hover {
+    font-size: 17px;
+    font-weight: 500;
+    color: $button-dark-color;
+}
+
+//mixins
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $query) { //min-width
+        @content;
+    }
+}
+
+@mixin with-content($content) {
+    @content;
+}
+
+// .factory__cards {
+//     @include responsive('medium') {
+//         display: grid;
+//         grid-template-columns: 50% auto auto;
+//         gap: 40px;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.benefits__cards {
+    @include responsive('large') {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 40px;
+    }
+}
+
+.benefits__container {
+    @include responsive('large') {
+        margin: auto;
+    }
+}

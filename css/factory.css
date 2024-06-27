@@ -1,1 +1,142 @@
-/*# sourceMappingURL=factory.css.map */
+.factory {
+  background: linear-gradient(white, rgb(246, 253, 250));
+  border-radius: 50px;
+}
+
+.factory__container {
+  max-width: 1200px;
+  padding: 100px 40px 100px 40px;
+}
+
+.factory__cards {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 30px;
+}
+
+.factory-img {
+  height: 330px;
+  background-image: url(../img/factory/factory.png);
+  background-size: cover;
+  background-position: 40%;
+}
+
+.factory-info {
+  height: 330px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  padding: 20px;
+}
+
+.factory__card-text {
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+
+.textblock-one {
+  color: white;
+  background-color: #1B5FC1;
+}
+
+.textblock-two {
+  color: #0C122D;
+  background-color: #FFB800;
+}
+
+.textblock-three {
+  color: white;
+  background-color: #1B5FC1;
+}
+
+.factory-located {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #FFB800;
+  height: 400px;
+}
+
+.factory__card-title {
+  color: #0C122D;
+  font-size: 20px;
+}
+
+.factory__card-text {
+  font-size: 15px;
+  line-height: 1.5rem;
+  color: #0C122D;
+}
+
+.factory__card-contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 20px;
+}
+
+.factory__card-contact-button {
+  text-align: center;
+  font-size: 17px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 15px;
+  margin: auto;
+  text-decoration: none;
+  text-align: center;
+  transition: 1s;
+  color: #1B5FC1;
+  width: 120px;
+}
+
+.factory__card-contact-button:hover {
+  background-color: #1B5FC1;
+  color: white;
+  border: none;
+}
+
+.factory__card-contact-tel {
+  display: grid;
+  grid-template-columns: 10% auto;
+  justify-content: center;
+  gap: 40px;
+}
+
+.factory__card-contact-tel-icon {
+  width: 40px;
+}
+
+.factory__card-contact-tel-title {
+  font-size: 15px;
+  color: #0C122D;
+}
+
+.factory__card-contact-tel-number {
+  font-size: 15px;
+  color: #0C122D;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.factory__card-contact-tel-number:hover {
+  font-size: 17px;
+  font-weight: 500;
+  color: #1B5FC1;
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__cards {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__container {
+    margin: auto;
+  }
+}/*# sourceMappingURL=factory.css.map */
