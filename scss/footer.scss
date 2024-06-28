@@ -1,0 +1,211 @@
+@import "variables";
+
+.footer {
+    background: linear-gradient($button-light-color, $background-main-color);
+}
+
+.footer__container {
+    max-width: 1200px;
+    padding: 100px 40px 100px 40px;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 50px;
+}
+
+.footer__contact-cards {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.footer__contact-card {
+    display: grid;
+    grid-template-columns: 10% auto;
+    text-align: start;
+    background-color: $background-benefits-color;
+    gap: 20px;
+    background-color: transparent;
+}
+
+.footer__contact-card-icon-container {
+    width: 30px;
+    display: grid;
+    align-items: center;
+}
+
+.footer__contact-card-text-container {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 10px;
+}
+
+.footer__contact-card-title {
+    color: $text-title-color;
+    font-size: 20px;
+}
+
+.footer__contact-card-text {
+    color: $text-title-color;
+    font-size: 16px;
+    line-height: 1.5rem;
+    text-decoration: none;
+}
+
+.footer__contact-card-text-container a {
+    transition: 0.2s;
+}
+
+.footer__contact-card-text-container a:hover {
+    font-size: 17px;
+    font-weight: 500;
+    color: $button-dark-color;
+}
+
+//mixins
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $query) { //min-width
+        @content;
+    }
+}
+
+@mixin with-content($content) {
+    @content;
+}
+
+.footer__contact-cards {
+    @include responsive('small') {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+.footer__menu-cards {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.footer__menu-description {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.footer__menu-description-logo {
+    max-width: 162px;
+}
+
+.footer__menu-description-text {
+    color: $text-main-color;
+}
+
+.footer__menu-company-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.footer__menu-company-title {
+    color: $text-title-color;
+    font-size: 20px;
+}
+
+.footer__menu-company-nav-links {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+}
+
+.footer__navigation-link {
+    color: $text-main-color;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer__navigation-link:hover {
+    font-size: 17px;
+    font-weight: 500;
+    color: $text-title-color;
+}
+
+.footer__menu-company-title,
+.footer__navigation-link {
+    @include responsive('small') {
+        display: grid;
+        justify-content: center;
+    }
+}
+
+.footer__menu-socials {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.footer__menu-socials-title {
+    color: $text-title-color;
+    font-size: 20px;
+}
+
+.footer__menu-socials-links {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.footer__menu-socials-link {
+    color: $text-main-color;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer__menu-socials-link:hover {
+    font-size: 17px;
+    font-weight: 500;
+    color: $text-title-color;
+}
+
+.footer__menu-socials-title,
+.footer__menu-socials-links {
+    @include responsive('small') {
+        display: grid;
+        justify-content: center;
+    }
+}
+
+.footer__menu-cards {
+    @include responsive('medium') {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.footer__menu-company-title,
+.footer__menu-socials-title {
+    @include responsive('medium') {
+        height: 40px;
+    }
+}
+
+.footer__contact-card {
+    @include responsive('large') {
+        padding-left: 30px;
+    }
+}
+
+.footer__copyright {
+    margin: auto;
+}
+
+.footer__copyright-text {
+    color: $text-main-color;
+}
+
+.footer__container {
+    margin: auto;
+}
