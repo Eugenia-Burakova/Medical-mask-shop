@@ -209,7 +209,7 @@
 .factory__card-img-container {
     @include responsive('large') {
         height: 660px;
-        background-image: url(../img/factory/factory.png);
+        background-image: url("../img/factory/factory.png");
     }
 }
 
