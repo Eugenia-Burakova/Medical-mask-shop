@@ -152,13 +152,31 @@
 
 .factory-located {
     @include responsive('medium') {
-        height: 500px;
+        width: 200%;
+        height: 330px;
     }
 }
+////////////////
+
+// .factory__card-contact-container {
+//     @include responsive('large') {
+//         display: flex;
+//         flex-direction: row;
+//         width: fit-content;
+//     }
+// }
+
+// .factory-located {
+//     @include responsive('large') {
+//         // width: 100%;
+//     }
+// }
 
 .textblock-one {
     @include responsive('medium') {
-        color: $text-main-color; //чого не міняє колір літер?
+        .factory__card-text{ //nested selector
+            color: $text-main-color;
+        }
         background-color: $background-main-color;
     }
 }
@@ -177,7 +195,35 @@
     }
 }
 
+.textblock-three {
+    @include responsive('large') {
+        background-color: transparent;
+        padding: 0;
+    }
+}
 
+.textblock-three-box {
+    @include responsive('large') {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 330px;
+    }
+}
+.textblock-three-box .factory__card-text {
+    @include responsive('large') {
+        background-color: $button-dark-color;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        grid-column: 2; //reordering blocks
+        grid-row: 1;
+    }
+}
 
-
-
+.factory__card-img-container {
+    @include responsive('large') {
+        height: 660px;
+        background-image: url(../img/factory/factory.png);
+    }
+}
