@@ -197,4 +197,10 @@
     height: 660px;
     background-image: url(../img/factory/factory.png);
   }
+}
+
+@media screen and (min-width: 992px) {
+  .factory__container {
+    margin: auto;
+  }
 }/*# sourceMappingURL=factory.css.map */

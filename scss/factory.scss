@@ -156,21 +156,6 @@
         height: 330px;
     }
 }
-////////////////
-
-// .factory__card-contact-container {
-//     @include responsive('large') {
-//         display: flex;
-//         flex-direction: row;
-//         width: fit-content;
-//     }
-// }
-
-// .factory-located {
-//     @include responsive('large') {
-//         // width: 100%;
-//     }
-// }
 
 .textblock-one {
     @include responsive('medium') {
@@ -225,5 +210,11 @@
     @include responsive('large') {
         height: 660px;
         background-image: url(../img/factory/factory.png);
+    }
+}
+
+.factory__container {
+    @include responsive('large') {
+        margin: auto;
     }
 }
