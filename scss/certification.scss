@@ -70,15 +70,25 @@
     }
 }
 
-// .certification__card .certification__card-line {
-//     display: grid;
-//     align-items: center;
-// }
+.certification__card {
+    @include responsive('small') {
+        display: grid;
+    align-items: center;
+    }
+
+    
+}
 
 .certification__cards {
-    @include responsive('middle') {
+    @include responsive('medium') {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+.certification__container {
+    @include responsive('large') {
+        margin: auto;
     }
 }
 
