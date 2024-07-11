@@ -1,0 +1,64 @@
+@import "variables";
+
+.choose-us {
+    background-color: $background-benefits-color;
+}
+
+.choose-us__container {
+    max-width: 1200px;
+    padding: 100px 40px 100px 40px;
+}
+
+.choose-us__cards {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.choose-us-img {
+    height: 330px;
+    background-image: url(../img/choose-us/choose-us-mask.png);
+    background-size: cover;
+    background-position: 40%;
+}
+
+.choose-us-info {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.choose-us__card-title {
+    color: $text-title-color;
+    font-size: 40px;
+}
+
+.choose-us__card-text, .choose-us__card-benefits-text {
+    color: $text-main-color;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.choose-us__card-benefits-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+}
+
+.choose-us__card-benefits {
+    display: grid;
+    grid-template-columns: 10% auto;
+    text-align: start;
+    background-color: $background-benefits-color;
+    gap: 10px;
+}
+
+.choose-us__card-benefits-icon-container {
+    width: 30px;
+}
+
+.choose-us__card-benefits-text-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+}
