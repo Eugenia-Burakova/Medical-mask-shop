@@ -5,6 +5,7 @@
 .choose-us__container {
   max-width: 1200px;
   padding: 100px 40px 100px 40px;
+  margin: auto;
 }
 
 .choose-us__cards {
@@ -18,6 +19,7 @@
   background-image: url(../img/choose-us/choose-us-mask.png);
   background-size: cover;
   background-position: 40%;
+  border-radius: 15px;
 }
 
 .choose-us-info {
@@ -59,4 +61,31 @@
   display: grid;
   grid-template-columns: auto;
   gap: 10px;
+}
+
+.choose-us__card-benefits-title {
+  color: #0C122D;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 480px) {
+  .choose-us__card-benefits-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .choose-us__cards {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .choose-us-img {
+    height: 100%;
+  }
 }/*# sourceMappingURL=choose-us.css.map */
